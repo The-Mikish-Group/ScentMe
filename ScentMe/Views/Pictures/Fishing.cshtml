@@ -1,0 +1,110 @@
+﻿@{
+    string siteURL = "https://ScentMe.Com";
+    string category = ViewBag.Message;
+    int imageCount = Directory.GetFiles("wwwroot/content/pictures/" + category + "/", "*" + ".jpg").Length;
+    string imageLocation = "/Content/Pictures/" + category + "/";
+    string imageURL = siteURL + imageLocation;
+}
+
+<div class="container-fluid body-content" style="padding: 0;">
+
+    <!-- Input imageLink -->
+    <input type="text" spellcheck="false" value="" id="imageLink">
+
+    <!-- Controls -->
+    <div id="my-button-group" class="Container-fluid row">
+
+        <div class="col-3" id="my-button">
+            <button id="Previous" title="Previous image" style="border-right: none;">
+                <img style="width:24px; height: 24px;" src="/Content/Svg/Site/Previous.svg"> Prev
+            </button>
+        </div>
+
+        <div class="col-3" id="my-button">
+            <button title="Copy Link to Clipboard" tooltip="Copy this Link" onclick="copyLink()" onmouseout="copyLinkOut()">
+                <img style="width:26px; height:26px;" src="/Content/Svg/Site/Links.svg"> Links
+            </button>
+        </div>
+
+        <div class="col-3" id="my-button">
+
+            <!-- How do we phrase this to still work and not complain about button inside <a></a>??? -->
+            <a style="padding-top: 10px; font-size: 16px;" id="shareLink" href="https://facebook.com/sharer/sharer.php?u=https://@siteURL/Content/Pictures/@category/Sunsets/000035.jpg" target="_blank">
+                <button title="Share on Facebook" type="submit" class="inlineBlock">
+                    <img style="width:26px; height: 26px;" src="/Content/Svg/Site/FB_Square.SVG"> Share
+                </button>
+            </a>
+
+        </div>
+
+        <div class="col-3" id="my-button">
+            <button id="Next" title="Next image" style="border-left: none;">
+                Next <img style="width:24px; height: 24px;" src="/Content/Svg/Site/Next.SVG">
+            </button>
+        </div>
+
+    </div>
+
+    <!-- Carousel for Picture slides -->
+    <div id="CarouselControl" Class="carousel slide" data-ride="carousel" data-interval="false">
+
+        <!-- The slideshow -->
+        <div Class="carousel-inner" id="CarouselItems" style="color: white; width: 100%;"></div>
+
+        <!-- Left And right controls -->
+        <a class="carousel-control-prev" href="#CarouselControl" role="button" data-bs-slide="prev"></a>
+        <a class="carousel-control-next" href="#CarouselControl" role="button" data-bs-slide="next"></a>
+
+    </div>
+
+    <script>
+        $("#maincontainter").css("background-color", "#000000"); /* bg-black */
+    </script>
+
+    <script>
+        createImageList("@imageLocation", "x", @imageCount)
+    </script>
+
+    <script>
+        /* Keep imageLink updated with current link */
+        document.getElementById("imageLink").value = "@imageURL" + ('000000' + @imageCount).slice(-6) + ".jpg";
+        document.getElementById("shareLink").setAttribute("href", "https://facebook.com/sharer/sharer.php?u=@siteURL/Content/Pictures/@category/" + ('000000' + @imageCount).slice(-6) + ".jpg");
+        $("#CarouselControl").on('slide.bs.carousel', function (event) {
+            document.getElementById("imageLink").value = "@imageURL" + ('000000' + (@imageCount - event.to)).slice(-6) + ".jpg";
+            document.getElementById("shareLink").setAttribute("href", "https://facebook.com/sharer/sharer.php?u=@siteURL/Content/Pictures/@category/" + ('000000' + (@imageCount - event.to)).slice(-6) + ".jpg");
+        });
+        $("CarouselControl").to;
+    </script>
+
+    <script>
+
+        function copyLink() {
+            document.getElementById("imageLink").autofocus = false;
+            document.getElementById("imageLink").select();
+            document.execCommand("copy");
+            document.getElementById("imageLink").hideFocus = true;
+            alert('This link has been copied to your clipboard: \n' + document.getElementById("imageLink").value);
+        }
+
+        function copyLinkOut() {
+            document.getElementById("imageLink").innerHTML = "Link";
+        }
+
+    </script>
+
+    <script>
+
+        $('#Previous').click(function (e) {
+            e.stopPropagation();
+            $('#CarouselControl').carousel('prev');
+            return false;
+        });
+
+        $('#Next').click(function (e) {
+            e.stopPropagation();
+            $('#CarouselControl').carousel('next');
+            return false;
+        });
+
+    </script>
+</div>

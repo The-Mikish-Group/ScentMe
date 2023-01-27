@@ -1,0 +1,142 @@
+﻿//    string eventName = ViewBag.Message;
+//    string backgroundImageUrl = "/Content/Pictures/Countdowns/" + eventName + ".jpg";
+
+//    string eventDateString = Holidays.EventDates.GetEventUtcDateString(eventName, Date.Now.Year)
+//    If Date.Parse(eventDateString) < Date.UtcNow Then
+//        eventDateString = Holidays.EventDates.GetEventUtcDateString(eventName, Date.Now.Year + 1)
+//    End If
+
+//    ' Cosmetic Fix for Names and add eventType and ExtraEffects where needed.
+//    Dim ExtraEffects As String = "_Nothing"
+//    Dim eventType As Integer = 0
+//    Select Case eventName
+//        Case "Spring"
+//            eventName = "Spring"
+//            eventType = 1
+//        Case "Summer"
+//            eventName = "Summer"
+//            eventType = 1
+//        Case "Autumn"
+//            eventName = "Autumn (Fall)"
+//            ExtraEffects = "_ExtraEffects"
+//            eventType = 1
+//        Case "Winter"
+//            eventName = "Winter"
+//            ExtraEffects = "_ExtraEffects"
+//            eventType = 1
+//        Case "Easter"
+//            eventName = "Easter"
+//            ExtraEffects = "_ExtraEffects"
+//        Case "Halloween"
+//            eventName = "Halloween"
+//            ExtraEffects = "_ExtraEffects"
+//        Case "Valentines"
+//            eventName = "Valentine's Day"
+//            ExtraEffects = "_ExtraEffects"
+//        Case "Thanksgiving"
+//            eventName = "Thanksgiving Day"
+//            ExtraEffects = "_ExtraEffects"
+//        Case "Christmas"
+//            eventName = "Christmas Day"
+//            ExtraEffects = "_ExtraEffects"
+//        Case "Mothers"
+//            eventName = "Mother's Day"
+//        Case "Fathers"
+//            eventName = "Father's Day"
+//        Case "MartinLutherKing"
+//            eventName = "Martin Luther King Jr"
+//        Case "Presidents"
+//            eventName = "Presidents Day"
+//        Case "Labor"
+//            eventName = "Labor Day"
+//        Case "Veterans"
+//            eventName = "Veteran's Day"
+//        Case "New Years"
+//            eventName = "New Year's Day"
+//        Case "Independence"
+//            eventName = "Independence Day"
+//        Case "Elections"
+//            eventName = "Election Day"
+//        Case "Memorial"
+//            eventName = "Memorial Day"
+//        Case "Lincoln"
+//            eventName = "Lincoln's Birthday"
+//        Case "Washington"
+//            eventName = "Washington's Birthday"
+//        Case "Jefferson"
+//            eventName = "Jefferson's Birthday"
+//        Case "Army"
+//            eventName = "US Army's Birthday"
+//        Case "AirForce"
+//            eventName = "US Air Force's Birthday"
+//        Case "Navy"
+//            eventName = "US Navy's Birthday"
+//        Case "MarineCorp"
+//            eventName = "US Marine Corp's Birthday"
+//        Case "NationalGuard"
+//            eventName = "National Guard's Birthday"
+//    End Select
+
+//}
+
+@*@Html.Partial(ExtraEffects)*@
+
+@*<div id="countdownWindow" style="margin: 0; background-color: transparent; background-image: url('@backgroundImageUrl'); background-repeat: no-repeat; background-size: cover;">
+
+    <!-- (Count) -->
+    <div class="ctdwn" style="padding: 0; background-color: transparent;">
+
+        <div id="includes_countdown_window_padding">
+
+            <!-- Event Name -->
+            <h2 id="eventname">@eventName</h2>
+
+            <!-- Event Date -->
+            <h6 id="eventdate"></h6>
+
+            <!-- Days -->
+            <h2 id="days"></h2>
+            <h6 id="lbldays"></h6>
+
+            <!-- Hours, Minutes, and Seconds -->
+            <div class="row" style="width: 100%">
+
+                <div class="col-4 center" style="width: 33.33%; min-width: 60px; text-align: center;">
+                    <h4 id="hours"></h4>
+                    <h6 id="lblhours"></h6>
+                </div>
+                <div class="col-4 center" style="width: 33.33%; min-width: 60px; text-align: center;">
+                    <h4 id="minutes"></h4>
+                    <h6 id="lblminutes"></h6>
+                </div>
+                <div class="col-4 center" style="width: 33.33%; min-width: 60px; text-align: center;">
+                    <h4 id="seconds"></h4>
+                    <h6 id="lblseconds"></h6>
+                </div>
+            </div>
+            <div id="timezone"></div>
+        </div>
+    </div>
+
+    <div id="countdownWindowPadding">
+    </div>
+
+</div>
+
+<script>
+    
+    var eventType = ('@eventType');
+    var eventName = ('@eventName');
+    var eventDate = new Date(Date.parse('@eventDateString'));
+
+    if (eventType == 1) {
+        if (eventName.localeCompare("Autumn (Fall)") == 0) {
+            eventName = "Autumn";
+        };
+    };
+
+    eventCountdown(eventName, eventType, eventDate);
+
+    // The End
+
+</script>*@

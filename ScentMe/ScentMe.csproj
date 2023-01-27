@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Pictures\Cartoons.cshtml" />
+    <Content Remove="Views\Pictures\Fishing.cshtml" />
+    <Content Remove="Views\Pictures\Jokes.cshtml" />
+    <Content Remove="Views\Pictures\Memes.cshtml" />
+    <Content Remove="Views\Pictures\ScentMe.cshtml" />
+    <Content Remove="Views\Pictures\Sunsets.cshtml" />
+    <Content Remove="Views\Pictures\Wildlife.cshtml" />
+    <Content Remove="wwwroot\css\site-old.css" />
+    <Content Remove="wwwroot\js\site_old.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Content\Pictures\Countdowns\" />
+  </ItemGroup>
+
+</Project>
