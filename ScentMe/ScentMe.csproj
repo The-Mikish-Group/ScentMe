@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Info\About.cshtml" />
     <Content Remove="Views\Pictures\Cartoons.cshtml" />
     <Content Remove="Views\Pictures\Fishing.cshtml" />
     <Content Remove="Views\Pictures\Jokes.cshtml" />
