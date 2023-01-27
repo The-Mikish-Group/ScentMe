@@ -1,85 +1,69 @@
 ﻿@{
-    string asideContent = "Aside/_Aside_About";
-    string msg = ViewBag.Message;
+    // ***This Site Info (Change here)***
+    //   Also change on _Images.cshtml page.
 
-    // This Site
-    string siteURL = "https://ScentMe.Com"; 
-
-    // Set Site Name
     string siteName = "Scent Me";
-
-    // Short name appears in Nav Bar at top on Phones... Can be longer like "Avon Park Nazarene" or "Avon Park Naz"
     string siteNameShort = "Scent Me";
+    string siteURL = "https://ScentMe.Com";
+    string asideContent = "Aside/_Aside_About_ScentMe";
+    //***********************************
+
 
     // Overall Organization
     string siteOrganization = "The Mikish Group";
 
-    // Set default values    
+    // Set default values
     string pageTitle = ViewBag.Message + " | " + siteNameShort;
     string description = "Enjoying Life!";
-    string folder = "/";
+    string folder = "";
 
     string pageShareFolder = siteURL + "/Content/PageShare/";
     string pageShareImage = "BlueSun.png";
     string pageShareImageHeight = "300";
-    string pageShareImageWidth = "300";  
+    string pageShareImageWidth = "300";
+
+    string msg = ViewBag.Message.Replace(" ", "");
 
     switch (ViewBag.Message)
     {
         #region Info
         case "About":
             {
-                pageTitle = "siteNameShort";
-                folder = "";
-                asideContent = "Aside/_Aside_About_ScentMe";
-
                 description = "The Scent of Life!";
                 pageShareImage = "BlueSun.png";
                 pageShareImageHeight = "300";
-                pageShareImageWidth = "300";                 
-
+                pageShareImageWidth = "300";
                 break;
             }
 
         case "Home":
             {
-                pageTitle = "siteNameShort";
-                folder = "";
-                asideContent = "Aside/_Aside_About_ScentMe";
-
                 description = "The Scent of Life!";
                 pageShareImage = "BlueSun.png";
                 pageShareImageHeight = "300";
                 pageShareImageWidth = "300";
-
                 break;
             }
 
-        case "Contact": 
+        case "Contact":
             {
                 pageTitle = "Contact Us" + " | " + siteNameShort;
                 folder = "/Info/Contact/";
-                asideContent = "Aside/_Aside_About_ScentMe";              
-
                 description = "Reach out and and we'll respond!";
                 pageShareImage = "BlueSun.png";
                 pageShareImageHeight = "300";
                 pageShareImageWidth = "300";
-
                 break;
             }
 
         case "Privacy":
-            {   
+            {
                 pageTitle = "Privacy Policy" + " | " + siteNameShort;
                 folder = "/Info/Privacy";
-                asideContent = "Aside/_Aside_About_ScentMe";
-
-                description = "Privacy Policy";                                
+                description = "Privacy Policy";
                 pageShareImage = "BlueSun.png";
                 pageShareImageHeight = "300";
                 pageShareImageWidth = "300";
-
                 break;
             }
 
@@ -87,13 +71,10 @@
             {
                 pageTitle = "Terms of Service" + " | " + siteNameShort;
                 folder = "/Info/TOS";
-                asideContent = "Aside/_Aside_About_ScentMe";
-
                 description = "Terms of Service";
                 pageShareImage = "BlueSun.png";
                 pageShareImageHeight = "300";
                 pageShareImageWidth = "300";
-
                 break;
             }
 
@@ -102,12 +83,10 @@
                 pageTitle = msg + " | " + siteNameShort;
                 folder = "/Info/Links";
                 asideContent = "Aside/_Aside_Links";
-
                 description = "More Links";
                 pageShareImage = "BlueSun.png";
                 pageShareImageHeight = "300";
                 pageShareImageWidth = "300";
-
                 break;
             }
 
@@ -116,20 +95,17 @@
                 pageTitle = msg + " | " + siteNameShort;
                 folder = "/Info/SvgFiles";
                 asideContent = "Aside/_Aside_Info_SVGFiles";
-
                 description = "SVG Collection";
                 pageShareImage = "BlueSun.png";
                 pageShareImageHeight = "300";
                 pageShareImageWidth = "300";
-
                 break;
             }
-        #endregion        
-
-        #region Photos 
+        #endregion
+        #region Photos
         case "Photos":
-            {   
-                pageTitle = msg + " | " +siteNameShort;
+            {
+                pageTitle = msg + " | " + siteNameShort;
                 folder = "/Pictures/Photos";
                 asideContent = "Aside/_Aside_Photos";
 
@@ -144,8 +120,8 @@
         case "Sunsets":
             {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Pictures/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Photos_" + msg.Replace(" ", "");
+                folder = "/Pictures/" + msg;
+                asideContent = "Aside/_Aside_Photos_" + msg;
 
                 description = "Beautiful Sunsets!";
                 pageShareImage = "Sunsets.jpg";
@@ -158,11 +134,11 @@
         case "Wildlife":
             {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Pictures/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Photos_" + msg.Replace(" ", "");
+                folder = "/Pictures/" + msg;
+                asideContent = "Aside/_Aside_Photos_" + msg;
 
                 description = "Interesting Wildlife";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "600";
                 pageShareImageWidth = "600";
 
@@ -172,11 +148,11 @@
         case "Fishing":
             {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Pictures/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Photos_" + msg.Replace(" ", "");
+                folder = "/Pictures/" + msg;
+                asideContent = "Aside/_Aside_Photos_" + msg;
 
                 description = "Fishing at the Lake";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "1360";
                 pageShareImageWidth = "2048";
 
@@ -186,18 +162,17 @@
         case "ScentMe":
             {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Pictures/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Photos_" + msg.Replace(" ", "");
+                folder = "/Pictures/" + msg;
+                asideContent = "Aside/_Aside_Photos_" + msg;
 
                 description = "Old  Scentme Images";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";                
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "500";
                 pageShareImageWidth = "670";
 
                 break;
             }
         #endregion
-
         #region Humor
         case "Humor":
             {
@@ -206,7 +181,7 @@
                 asideContent = "Aside/_Aside_Humor";
 
                 description = "Add some Humor to your life!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "600";
                 pageShareImageWidth = "600";
 
@@ -216,11 +191,11 @@
         case "Cartoons":
             {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Pictures/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Humor_" + msg.Replace(" ", "");
+                folder = "/Pictures/" + msg;
+                asideContent = "Aside/_Aside_Humor_" + msg;
 
                 description = "Cartoons from the InterWebs!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "600";
                 pageShareImageWidth = "600";
 
@@ -228,13 +203,13 @@
             }
 
         case "Memes":
-            {             
+            {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Pictures/" + msg.Replace(" ", "");   
-                asideContent = "Aside/_Aside_Humor_" + msg.Replace(" ", "");
+                folder = "/Pictures/" + msg;
+                asideContent = "Aside/_Aside_Humor_" + msg;
 
                 description = "Memes from Bridet!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "600";
                 pageShareImageWidth = "600";
 
@@ -244,28 +219,27 @@
         case "Jokes":
             {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Pictures/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Humor_" + msg.Replace(" ", "");
+                folder = "/Pictures/" + msg;
+                asideContent = "Aside/_Aside_Humor_" + msg;
 
                 description = "Memes from The Old Jokes Home!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "500";
                 pageShareImageWidth = "500";
 
                 break;
-            } 
+            }
 
         #endregion
-
         #region Seasons
         case "Spring":
-            {                
+            {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Countdowns/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Season_" + msg.Replace(" ", "");
+                folder = "/Countdowns/" + msg;
+                asideContent = "Aside/_Aside_Season_" + msg;
 
-                description = "Days until " + msg.Replace(" ", "") + "!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                description = "Days until " + msg + "!";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "600";
                 pageShareImageWidth = "600";
 
@@ -273,13 +247,13 @@
             }
 
         case "Summer":
-            {                
+            {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Countdowns/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Season_" + msg.Replace(" ", "");
+                folder = "/Countdowns/" + msg;
+                asideContent = "Aside/_Aside_Season_" + msg;
 
-                description = "Days until " + msg.Replace(" ", "") + "!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                description = "Days until " + msg + "!";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "600";
                 pageShareImageWidth = "600";
 
@@ -287,13 +261,13 @@
             }
 
         case "Autumn":
-            {                
+            {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Countdowns/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Season_" + msg.Replace(" ", "");
+                folder = "/Countdowns/" + msg;
+                asideContent = "Aside/_Aside_Season_" + msg;
 
                 description = "Days until Autumn (Fall)!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "1360";
                 pageShareImageWidth = "1360";
 
@@ -301,29 +275,28 @@
             }
 
         case "Winter":
-            {                
+            {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Countdowns/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Season_" + msg.Replace(" ", "");
+                folder = "/Countdowns/" + msg;
+                asideContent = "Aside/_Aside_Season_" + msg;
 
-                description = "Days until " + msg.Replace(" ", "") + "!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                description = "Days until " + msg + "!";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "600";
                 pageShareImageWidth = "600";
 
                 break;
             }
         #endregion
-
         #region Hollidays
         case "NewYears":
-            {                
+            {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Countdowns/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Events_" + msg.Replace(" ", "");
+                folder = "/Countdowns/" + msg;
+                asideContent = "Aside/_Aside_Events_" + msg;
 
-                description = "Days until " + msg.Replace(" ", "") + "!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                description = "Days until " + msg + "!";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "600";
                 pageShareImageWidth = "600";
 
@@ -331,13 +304,13 @@
             }
 
         case "MartinLutherKing":
-            {                
+            {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Countdowns/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Events_" + msg.Replace(" ", "");
+                folder = "/Countdowns/" + msg;
+                asideContent = "Aside/_Aside_Events_" + msg;
 
-                description = "Days until " + msg.Replace(" ", "") + "!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                description = "Days until " + msg + "!";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "600";
                 pageShareImageWidth = "600";
 
@@ -345,13 +318,13 @@
             }
 
         case "Valentines":
-            {                
+            {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Countdowns/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Events_" + msg.Replace(" ", "");
+                folder = "/Countdowns/" + msg;
+                asideContent = "Aside/_Aside_Events_" + msg;
 
-                description = "Days until " + msg.Replace(" ", "") + "!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                description = "Days until " + msg + "!";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "1600";
                 pageShareImageWidth = "1600";
 
@@ -359,13 +332,13 @@
             }
 
         case "Presidents":
-            {                
+            {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Countdowns/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Events_" + msg.Replace(" ", "");
+                folder = "/Countdowns/" + msg;
+                asideContent = "Aside/_Aside_Events_" + msg;
 
-                description = "Days until " + msg.Replace(" ", "") + "!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                description = "Days until " + msg + "!";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "600";
                 pageShareImageWidth = "600";
 
@@ -373,13 +346,13 @@
             }
 
         case "Easter":
-            {                
+            {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Countdowns/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Events_" + msg.Replace(" ", "");
+                folder = "/Countdowns/" + msg;
+                asideContent = "Aside/_Aside_Events_" + msg;
 
-                description = "Days until " + msg.Replace(" ", "") + "!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                description = "Days until " + msg + "!";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "600";
                 pageShareImageWidth = "600";
 
@@ -387,13 +360,13 @@
             }
 
         case "Mothers":
-            {                
+            {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Countdowns/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Events_" + msg.Replace(" ", "");
+                folder = "/Countdowns/" + msg;
+                asideContent = "Aside/_Aside_Events_" + msg;
 
-                description = "Days until " + msg.Replace(" ", "") + "!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                description = "Days until " + msg + "!";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "600";
                 pageShareImageWidth = "600";
 
@@ -401,13 +374,13 @@
             }
 
         case "Memorial":
-            {                
+            {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Countdowns/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Events_" + msg.Replace(" ", "");
+                folder = "/Countdowns/" + msg;
+                asideContent = "Aside/_Aside_Events_" + msg;
 
-                description = "Days until " + msg.Replace(" ", "") + "!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                description = "Days until " + msg + "!";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "600";
                 pageShareImageWidth = "600";
 
@@ -415,13 +388,13 @@
             }
 
         case "Fathers":
-            {                
+            {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Countdowns/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Events_" + msg.Replace(" ", "");
+                folder = "/Countdowns/" + msg;
+                asideContent = "Aside/_Aside_Events_" + msg;
 
-                description = "Days until " + msg.Replace(" ", "") + "!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                description = "Days until " + msg + "!";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "600";
                 pageShareImageWidth = "600";
 
@@ -429,13 +402,13 @@
             }
 
         case "Independence":
-            {                
+            {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Countdowns/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Events_" + msg.Replace(" ", "");
+                folder = "/Countdowns/" + msg;
+                asideContent = "Aside/_Aside_Events_" + msg;
 
-                description = "Days until " + msg.Replace(" ", "") + "!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                description = "Days until " + msg + "!";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "600";
                 pageShareImageWidth = "600";
 
@@ -443,13 +416,13 @@
             }
 
         case "Labor":
-            {                
+            {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Countdowns/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Events_" + msg.Replace(" ", "");
+                folder = "/Countdowns/" + msg;
+                asideContent = "Aside/_Aside_Events_" + msg;
 
-                description = "Days until " + msg.Replace(" ", "") + "!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                description = "Days until " + msg + "!";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "600";
                 pageShareImageWidth = "600";
 
@@ -457,13 +430,13 @@
             }
 
         case "Veterans":
-            {                
+            {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Countdowns/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Events_" + msg.Replace(" ", "");
+                folder = "/Countdowns/" + msg;
+                asideContent = "Aside/_Aside_Events_" + msg;
 
-                description = "Days until " + msg.Replace(" ", "") + "!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                description = "Days until " + msg + "!";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "600";
                 pageShareImageWidth = "600";
 
@@ -471,13 +444,13 @@
             }
 
         case "Halloween":
-            {                
+            {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Countdowns/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Events_" + msg.Replace(" ", "");
+                folder = "/Countdowns/" + msg;
+                asideContent = "Aside/_Aside_Events_" + msg;
 
-                description = "Days until " + msg.Replace(" ", "") + "!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                description = "Days until " + msg + "!";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "600";
                 pageShareImageWidth = "600";
 
@@ -485,13 +458,13 @@
             }
 
         case "Thanksgiving":
-            {                
+            {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Countdowns/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Events_" + msg.Replace(" ", "");
+                folder = "/Countdowns/" + msg;
+                asideContent = "Aside/_Aside_Events_" + msg;
 
-                description = "Days until " + msg.Replace(" ", "") + "!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                description = "Days until " + msg + "!";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "600";
                 pageShareImageWidth = "600";
 
@@ -499,29 +472,28 @@
             }
 
         case "Christmas":
-            {                
+            {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Countdowns/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Events_" + msg.Replace(" ", "");
+                folder = "/Countdowns/" + msg;
+                asideContent = "Aside/_Aside_Events_" + msg;
 
-                description = "Days until " + msg.Replace(" ", "") + "!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                description = "Days until " + msg + "!";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "600";
                 pageShareImageWidth = "600";
 
                 break;
             }
         #endregion
-
         #region Birthdays
         case "Army":
             {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Countdowns/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Birthday_" + msg.Replace(" ", "");
+                folder = "/Countdowns/" + msg;
+                asideContent = "Aside/_Aside_Birthday_" + msg;
 
-                description = "Days until " + msg.Replace(" ", "") + "!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                description = "Days until " + msg + "!";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "600";
                 pageShareImageWidth = "600";
 
@@ -531,11 +503,11 @@
         case "Navy":
             {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Countdowns/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Birthday_" + msg.Replace(" ", "");
+                folder = "/Countdowns/" + msg;
+                asideContent = "Aside/_Aside_Birthday_" + msg;
 
-                description = "Days until " + msg.Replace(" ", "") + "!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                description = "Days until " + msg + "!";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "600";
                 pageShareImageWidth = "600";
 
@@ -545,11 +517,11 @@
         case "AirForce":
             {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Countdowns/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Birthday_" + msg.Replace(" ", "");
+                folder = "/Countdowns/" + msg;
+                asideContent = "Aside/_Aside_Birthday_" + msg;
 
-                description = "Days until " + msg.Replace(" ", "") + "!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                description = "Days until " + msg + "!";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "600";
                 pageShareImageWidth = "600";
 
@@ -559,11 +531,11 @@
         case "MarineCorp":
             {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Countdowns/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Birthday_" + msg.Replace(" ", "");
+                folder = "/Countdowns/" + msg;
+                asideContent = "Aside/_Aside_Birthday_" + msg;
 
-                description = "Days until " + msg.Replace(" ", "") + "!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                description = "Days until " + msg + "!";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "600";
                 pageShareImageWidth = "600";
 
@@ -573,11 +545,11 @@
         case "NationalGuard":
             {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Countdowns/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Birthday_" + msg.Replace(" ", "");
+                folder = "/Countdowns/" + msg;
+                asideContent = "Aside/_Aside_Birthday_" + msg;
 
-                description = "Days until " + msg.Replace(" ", "") + "!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                description = "Days until " + msg + "!";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "600";
                 pageShareImageWidth = "600";
 
@@ -587,11 +559,11 @@
         case "Jefferson":
             {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Countdowns/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Birthday_" + msg.Replace(" ", "");
+                folder = "/Countdowns/" + msg;
+                asideContent = "Aside/_Aside_Birthday_" + msg;
 
-                description = "Days until " + msg.Replace(" ", "") + "!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                description = "Days until " + msg + "!";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "600";
                 pageShareImageWidth = "600";
 
@@ -601,11 +573,11 @@
         case "Washington":
             {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Countdowns/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Birthday_" + msg.Replace(" ", "");
+                folder = "/Countdowns/" + msg;
+                asideContent = "Aside/_Aside_Birthday_" + msg;
 
-                description = "Days until " + msg.Replace(" ", "") + "!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                description = "Days until " + msg + "!";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "600";
                 pageShareImageWidth = "600";
 
@@ -615,27 +587,26 @@
         case "Lincoln":
             {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Countdowns/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Birthday_" + msg.Replace(" ", "");
+                folder = "/Countdowns/" + msg;
+                asideContent = "Aside/_Aside_Birthday_" + msg;
 
-                description = "Days until " + msg.Replace(" ", "") + "!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                description = "Days until " + msg + "!";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "600";
                 pageShareImageWidth = "600";
 
                 break;
             }
-        #endregion        
-
+        #endregion
         #region Snow Examples
         case "Snow1":
             {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Pictures/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Images_" + msg.Replace(" ", "");
+                folder = "/Pictures/" + msg;
+                asideContent = "Aside/_Aside_Images_" + msg;
 
-                description = "Anamation Example: " + msg.Replace(" ", "") + "!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                description = "Anamation Example: " + msg + "!";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "2220";
                 pageShareImageWidth = "2550";
 
@@ -643,13 +614,13 @@
             }
 
         case "Snow2":
-            {                
+            {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Pictures/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Images_" + msg.Replace(" ", "");
+                folder = "/Pictures/" + msg;
+                asideContent = "Aside/_Aside_Images_" + msg;
 
-                description = "Anamation Example: " + msg.Replace(" ", "") + "!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                description = "Anamation Example: " + msg + "!";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "2220";
                 pageShareImageWidth = "2550";
 
@@ -657,13 +628,13 @@
             }
 
         case "Snow3":
-            {                
+            {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Pictures/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Images_" + msg.Replace(" ", "");
+                folder = "/Pictures/" + msg;
+                asideContent = "Aside/_Aside_Images_" + msg;
 
-                description = "Anamation Example: " + msg.Replace(" ", "") + "!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                description = "Anamation Example: " + msg + "!";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "2220";
                 pageShareImageWidth = "2550";
 
@@ -671,13 +642,13 @@
             }
 
         case "Snow4":
-            {                
+            {
                 pageTitle = msg + " | " + siteNameShort;
-                folder = "/Pictures/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Images_" + msg.Replace(" ", "");
+                folder = "/Pictures/" + msg;
+                asideContent = "Aside/_Aside_Images_" + msg;
 
-                description = "Anamation Example: " + msg.Replace(" ", "") + "!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                description = "Anamation Example: " + msg + "!";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "2220";
                 pageShareImageWidth = "2550";
 
@@ -685,19 +656,19 @@
             }
 
         case "Snow5":
-            {                
-               pageTitle = msg + " | " + siteNameShort;
-                folder = "/Pictures/" + msg.Replace(" ", "");
-                asideContent = "Aside/_Aside_Images_" + msg.Replace(" ", "");
+            {
+                pageTitle = msg + " | " + siteNameShort;
+                folder = "/Pictures/" + msg;
+                asideContent = "Aside/_Aside_Images_" + msg;
 
-                description = "Anamation Example: " + msg.Replace(" ", "") + "!";
-                pageShareImage = msg.Replace(" ", "") + ".jpg";
+                description = "Anamation Example: " + msg + "!";
+                pageShareImage = msg + ".jpg";
                 pageShareImageHeight = "2220";
                 pageShareImageWidth = "2550";
 
                 break;
             }
-        #endregion       
+            #endregion
     }
 
     // Page Share Settings -- (shows on "Page Share" card when a link is shared)
@@ -725,13 +696,13 @@
     <title>@pageTitle</title>
 
     <!-- Fonts (Lato -  add more fonts here) -->
-    <link href='https://fonts.googleapis.com/css?family=Lato:300, 400, 500, 600' rel='stylesheet' type='text/css'>    
-    
+    <link href='https://fonts.googleapis.com/css?family=Lato:300, 400, 500, 600' rel='stylesheet' type='text/css'>
+
     <!-- Default FB App ID unused -->
     <meta property="fb:app_id" content="966242223397117" />
 
     <!-- Google Site Verification -->
-   @* <meta name="google-site-verification" content="wdaytYpXJY1e9iWkOJXCS6HBuc0aCDxz--VJTfwTT3E" />*@
+    @* <meta name="google-site-verification" content="wdaytYpXJY1e9iWkOJXCS6HBuc0aCDxz--VJTfwTT3E" />*@
 
     <!-- FavIcon(s) - (all your Logo... plenty of them!) -->
     <link rel="apple-touch-icon" sizes="180x180" href="~/content/icons/apple-touch-icon.png" />
@@ -770,7 +741,7 @@
 
     <!-- Bootstrap CSS file -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-   
+
     <!-- My CSS files -->
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/colors.css" asp-append-version="true" />
@@ -788,33 +759,21 @@
 
 </head>
 
-@*<style>
-    .nav-link {
-        color: chocolate;
-    }
-
-    .nav-link:hover {
-        color: darkorange;
-    }
-
-</style>*@
-
-
 <body style="background-color: black; overflow-y: scroll;">
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md" style="padding: 0 10px; background-color: black;">
 
-    <div class="row" style="width:100%;">
+        <div class="row" style="width:100%;">
 
-        <!-- Brand/logo -->
-            <div id ="Home" class="col-md-5">
+            <!-- Brand/logo -->
+            <div id="Home" class="col-md-5">
                 <a class="my-header-brand" href="/">
-                <img style="width: 20px; height: 20px; padding-bottom: 0; margin-top:-5px;" src="~/Content/Svg/Site/Home.svg" /> @siteName
+                    <img style="width: 20px; height: 20px; padding-bottom: 0; margin-top:-5px;" src="~/Content/Svg/Site/Home.svg" /> @siteName
                 </a>
+            </div>
         </div>
-    </div>
-</nav>    
+    </nav>
 
     <!-- Main -->
     <div class="row" style="min-height: calc(100vh - 162px); width:100%; margin: 0;  background-color: antiquewhite;">
@@ -836,7 +795,7 @@
 
     <!-- Bottom Footer Navbar Menu -->
     <footer id="my-footer" class="my-footer" role="contentinfo" aria-label="Site footer">
-        
+
         <div class="my-footer-module-group">
 
             <div class="my-footer-module">

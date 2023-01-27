@@ -1,5 +1,9 @@
 ﻿@{
+
+    // This Site Info  -  Change here!
     string siteURL = "https://ScentMe.Com";
+    //*******************************
+
     string category = ViewBag.Message;
     int imageCount = Directory.GetFiles("wwwroot/content/pictures/" + category + "/", "*" + ".jpg").Length;
     string imageLocation = "/Content/Pictures/" + category + "/";

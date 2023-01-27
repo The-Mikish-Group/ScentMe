@@ -17,7 +17,7 @@ namespace MyWebsite.Controllers
         public IActionResult Index()
         {
             ViewBag.Message = "Pictures";
-            return View();
+            return View("Humor");
         }
 
         public IActionResult Humor()
@@ -65,23 +65,23 @@ namespace MyWebsite.Controllers
         public IActionResult Political()
         {
             ViewBag.Message = "Political";
-            return View();
+            return View("_Images");
         }
 
         public IActionResult Memes()
         {
             ViewBag.Message = "Memes";
-            return View();
+            return View("_Images");
         }
         public IActionResult Cartoons()
         {
             ViewBag.Message = "Cartoons";
-            return View();
+            return View("_Images");
         }
         public IActionResult Jokes()
         {
             ViewBag.Message = "Jokes";
-            return View();
+            return View("_Images");
         }
         public IActionResult NSFW()
         {
