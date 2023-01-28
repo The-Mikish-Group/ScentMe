@@ -1,9 +1,5 @@
 ﻿@{
-
-    // This Site Info  -  Change here!
-    string siteURL = "https://ScentMe.Com";
-    //*******************************
-
+    string siteURL = SiteHelpers.siteURL();
     string category = ViewBag.Message;
     int imageCount = Directory.GetFiles("wwwroot/content/pictures/" + category + "/", "*" + ".jpg").Length;
     string imageLocation = "/Content/Pictures/" + category + "/";
@@ -72,13 +68,23 @@
 
 <!-- Copy Image Link -->
 <script>
+
     function copyLink() {
         document.getElementById("imageLink").autofocus = false;
-        document.getElementById("imageLink").select();
-        document.execCommand("copy");
+        const textToCopy = document.getElementById("imageLink").value;
         document.getElementById("imageLink").hideFocus = true;
-        alert('This link has been copied to your clipboard: \n' + document.getElementById("imageLink").value);
+        navigator.clipboard.writeText(textToCopy)
+        .then(() => { alert(textToCopy + ` Copied!`) })
+        .catch((error) => { alert(`Copy failed! ${error}`) })
     }
+
+    //function copyLink() {
+    //    document.getElementById("imageLink").autofocus = false;
+    //    document.getElementById("imageLink").select();
+    //    document.execCommand("copy");
+    //    document.getElementById("imageLink").hideFocus = true;
+    //    alert('This link has been copied to your clipboard: \n' + document.getElementById("imageLink").value);
+    //}
 
     function copyLinkOut() {
         document.getElementById("imageLink").innerHTML = "Link";

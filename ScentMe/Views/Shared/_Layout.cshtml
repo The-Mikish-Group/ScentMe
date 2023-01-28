@@ -76,6 +76,20 @@
                 break;
             }
 
+        case "EventsMenu":
+            {
+                pageTitle = msg + " | " + siteNameShort;
+                folder = "/Countdowns/" + msg;
+                asideContent = "Aside/_Aside_Events_" + msg;
+
+                description = "Days until... Countdowns!";
+                pageShareImage = "BlueSun.png";
+                pageShareImageHeight = "300";
+                pageShareImageWidth = "300";
+
+                break;
+            }
+
         case "SvgFiles":
             {
                 pageTitle = msg + " | " + siteNameShort;
@@ -796,6 +810,7 @@
             <div class="my-footer-module">
                 <h6 class="my-footer-header">Features</h6>
                 <ul>
+                    <li class="my-footer-item"><a class="nav-link" href="/countdowns/eventsmenu">Events</a></li>
                     <li class="my-footer-item"><a class="nav-link" href="/pictures/Photos">Photos</a></li>
                     <li class="my-footer-item"><a class="nav-link" href="/pictures/Humor">Humor</a></li>
                 </ul>
@@ -810,11 +825,15 @@
             </div>
 
         </div>
-        <div class="my-footer-module my-footer-module--secondary" style="color:#f2f2f2; background-color: transparent; margin: 0; padding: 0; width: 100%;">
-            <h6 style="text-align: center; margin: 0; padding: 5px 10px 12px 5px; color: burlywood; text-shadow: 0px 0px 2px black;">
+        <div class="my-footer-module m-0 p-0 w-100 bg-transparent" style="color:#f2f2f2;">
+
+            <p class="text-center m-0" style="font-size: 10px; padding: 5px 10px 12px 5px; color: burlywood; text-shadow: 0px 0px 1px black;">
                 <small>This website is privately owned and not associated or affiliated with any group other than the design team at:</small><br>
-                <a style="font-weight: 500; font-size: 14px; color: burlywood; text-shadow: 0px 0px 2px black;" href="/Info/Contact"><small>The Mikish Group © 2023 All Rights Reserved.</small></a>
-            </h6>
+                <a style="font-weight: 500; font-size: 14px; color: burlywood; text-shadow: 0px 0px 1px black;" href="/Info/Contact">
+                    <small>The Mikish Group © 2023 All Rights Reserved.</small>
+                </a>
+            </p>
+
         </div>
 
     </footer>
