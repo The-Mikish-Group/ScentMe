@@ -337,7 +337,7 @@ footer {
     color: burlywood;
     margin-bottom: 0;
     margin-right: 0;
-    min-width: 230px;
+   /* min-width: 230px;*/
 }
 
 .my-menu-group .my-menu-item,
@@ -424,6 +424,7 @@ footer {
 
 #hours,
 #minutes,
+#seconds,
 #EventSeconds {
     font-size: 36px;
     font-weight: 400;

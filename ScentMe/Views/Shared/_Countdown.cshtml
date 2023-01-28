@@ -1,87 +1,183 @@
-﻿//    string eventName = ViewBag.Message;
-//    string backgroundImageUrl = "/Content/Pictures/Countdowns/" + eventName + ".jpg";
+﻿@{
+    string eventName = ViewBag.Message;
+    string backgroundImageUrl = "/Content/Pictures/Countdowns/" + eventName + ".jpg";
 
-//    string eventDateString = Holidays.EventDates.GetEventUtcDateString(eventName, Date.Now.Year)
-//    If Date.Parse(eventDateString) < Date.UtcNow Then
-//        eventDateString = Holidays.EventDates.GetEventUtcDateString(eventName, Date.Now.Year + 1)
-//    End If
+    string eventDateString = Holidays.GetEventUtcDateString(eventName, DateTime.Now.Year);
 
-//    ' Cosmetic Fix for Names and add eventType and ExtraEffects where needed.
-//    Dim ExtraEffects As String = "_Nothing"
-//    Dim eventType As Integer = 0
-//    Select Case eventName
-//        Case "Spring"
-//            eventName = "Spring"
-//            eventType = 1
-//        Case "Summer"
-//            eventName = "Summer"
-//            eventType = 1
-//        Case "Autumn"
-//            eventName = "Autumn (Fall)"
-//            ExtraEffects = "_ExtraEffects"
-//            eventType = 1
-//        Case "Winter"
-//            eventName = "Winter"
-//            ExtraEffects = "_ExtraEffects"
-//            eventType = 1
-//        Case "Easter"
-//            eventName = "Easter"
-//            ExtraEffects = "_ExtraEffects"
-//        Case "Halloween"
-//            eventName = "Halloween"
-//            ExtraEffects = "_ExtraEffects"
-//        Case "Valentines"
-//            eventName = "Valentine's Day"
-//            ExtraEffects = "_ExtraEffects"
-//        Case "Thanksgiving"
-//            eventName = "Thanksgiving Day"
-//            ExtraEffects = "_ExtraEffects"
-//        Case "Christmas"
-//            eventName = "Christmas Day"
-//            ExtraEffects = "_ExtraEffects"
-//        Case "Mothers"
-//            eventName = "Mother's Day"
-//        Case "Fathers"
-//            eventName = "Father's Day"
-//        Case "MartinLutherKing"
-//            eventName = "Martin Luther King Jr"
-//        Case "Presidents"
-//            eventName = "Presidents Day"
-//        Case "Labor"
-//            eventName = "Labor Day"
-//        Case "Veterans"
-//            eventName = "Veteran's Day"
-//        Case "New Years"
-//            eventName = "New Year's Day"
-//        Case "Independence"
-//            eventName = "Independence Day"
-//        Case "Elections"
-//            eventName = "Election Day"
-//        Case "Memorial"
-//            eventName = "Memorial Day"
-//        Case "Lincoln"
-//            eventName = "Lincoln's Birthday"
-//        Case "Washington"
-//            eventName = "Washington's Birthday"
-//        Case "Jefferson"
-//            eventName = "Jefferson's Birthday"
-//        Case "Army"
-//            eventName = "US Army's Birthday"
-//        Case "AirForce"
-//            eventName = "US Air Force's Birthday"
-//        Case "Navy"
-//            eventName = "US Navy's Birthday"
-//        Case "MarineCorp"
-//            eventName = "US Marine Corp's Birthday"
-//        Case "NationalGuard"
-//            eventName = "National Guard's Birthday"
-//    End Select
+    if (DateTime.Parse(eventDateString) < DateTime.UtcNow) {eventDateString = Holidays.GetEventUtcDateString(eventName, DateTime.Now.Year + 1); }
+    
+    //Cosmetic Fix for Names and add eventType and ExtraEffects where needed.
+    string ExtraEffects = "_Nothing";
+    int eventType = 0;
+    switch (eventName)
+    {
+        case "Spring":
+            {
+                eventName = "Spring";
+                eventType = 1;
+                break;
+            }
 
-//}
+        case "Summer":
+            {
+                eventName = "Summer";
+                eventType = 1;
+                break;
+            }
 
-@*@Html.Partial(ExtraEffects)*@
+        case "Autumn":
+            {
+                eventName = "Autumn (Fall)";
+                ExtraEffects = "_ExtraEffects";
+                eventType = 1;
+                break;
+            }
 
-@*<div id="countdownWindow" style="margin: 0; background-color: transparent; background-image: url('@backgroundImageUrl'); background-repeat: no-repeat; background-size: cover;">
+        case "Winter":
+            {
+                eventName = "Winter";
+                ExtraEffects = "_ExtraEffects";
+                eventType = 1;
+                break;
+            }
+
+        case "Easter":
+            {
+                eventName = "Easter";
+                ExtraEffects = "_ExtraEffects";
+                break;
+            }
+
+        case "Halloween":
+            {
+                eventName = "Halloween";
+                ExtraEffects = "_ExtraEffects";
+                break;
+            }
+
+        case "Valentines":
+            {
+                eventName = "Valentine's Day";
+                ExtraEffects = "_ExtraEffects";
+                break;
+            }
+
+        case "Thanksgiving":
+            {
+                eventName = "Thanksgiving Day";
+                ExtraEffects = "_ExtraEffects";
+                break;
+            }
+
+        case "Christmas":
+            {
+                eventName = "Christmas Day";
+                ExtraEffects = "_ExtraEffects";
+                break;
+            }
+
+        case "Mothers":
+            {
+                eventName = "Mother's Day";
+                break;
+            }
+
+        case "Fathers":
+            {
+                eventName = "Father's Day";
+                break;
+            }
+
+        case "Presidents":
+            {
+                eventName = "Presidents Day";
+                break;
+            }
+
+        case "Labor":
+            {
+                eventName = "Labor Day";
+                break;
+            }
+
+        case "Veterans":
+            {
+                eventName = "Veteran's Day";
+                break;
+            }
+
+        case "NewYears":
+            {
+                eventName = "New Years Day";
+                break;
+            }
+
+        case "Independence":
+            {
+                eventName = "Independence Day";
+                break;
+            }
+
+        case "Memorial":
+            {
+                eventName = "Memorial Day";
+                break;
+            }
+
+        case "Lincoln":
+            {
+                eventName = "Lincoln's Birthday";
+                break;
+            }
+
+        case "Washington":
+            {
+                eventName = "Washington's Birthday";
+                break;
+            }
+
+        case "Jefferson":
+            {
+                eventName = "Jefferson's Birthday";
+                break;
+            }
+
+        case "Army":
+            {
+                eventName = "Army's Birthday";
+                break;
+            }
+
+        case "AirForce":
+            {
+                eventName = "AirForce Birthday";
+                break;
+            }
+
+        case "Navy":
+            {
+                eventName = "Navy Birthday";
+                break;
+            }
+
+        case "MarineCorp":
+            {
+                eventName = "MarineCorp Birthday";
+                break;
+            }
+
+        case "NationalGuard":
+            {
+                eventName = "NationalGuard Birthday";
+                break;
+            }
+
+    }
+}
+
+<partial name="@ExtraEffects" />
+
+<div id="countdownWindow" style="margin: 0; background-color: transparent; background-image: url('@backgroundImageUrl'); background-repeat: no-repeat; background-size: cover;">
 
     <!-- (Count) -->
     <div class="ctdwn" style="padding: 0; background-color: transparent;">
@@ -118,13 +214,12 @@
         </div>
     </div>
 
-    <div id="countdownWindowPadding">
-    </div>
+    <div id="countdownWindowPadding"></div>
 
 </div>
 
 <script>
-    
+
     var eventType = ('@eventType');
     var eventName = ('@eventName');
     var eventDate = new Date(Date.parse('@eventDateString'));
@@ -139,4 +234,4 @@
 
     // The End
 
-</script>*@
+</script>

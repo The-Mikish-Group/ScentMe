@@ -1,6 +1,6 @@
 ﻿@{
-    string siteName = "Scent Me";
-    string siteFacebookPageURL = "";
+    string siteName = SiteHelpers.siteName();
+    string siteFacebookPageURL = SiteHelpers.siteFacebookPageURL();
 }
 
 <div style="padding-left:15px; padding-right: 15px;">
@@ -13,7 +13,7 @@
             <br />
 
             <p style="color: black; font-size: larger;">
-                <b>Welcome to Scent Me and enjoy browsing!</b>
+                <b>Welcome to @siteName and enjoy browsing!</b>
             </p>
 
             <!-- Description -->

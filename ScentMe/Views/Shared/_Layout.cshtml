@@ -1,13 +1,8 @@
 ﻿@{
-    // ***This Site Info (Change here)***
-    //   Also change on _Images.cshtml page.
-
-    string siteName = "Scent Me";
-    string siteNameShort = "Scent Me";
-    string siteURL = "https://ScentMe.Com";
-    string asideContent = "Aside/_Aside_About_ScentMe";
-    //***********************************
-
+    string siteName = SiteHelpers.siteName();
+    string siteNameShort = siteName;
+    string siteURL = SiteHelpers.siteURL();
+    string asideContent = SiteHelpers.siteAboutSide();
 
     // Overall Organization
     string siteOrganization = "The Mikish Group";
@@ -17,7 +12,7 @@
     string description = "Enjoying Life!";
     string folder = "";
 
-    string pageShareFolder = siteURL + "/Content/PageShare/";
+    string pageShareFolder = siteURL + "/Content/PageShares/";
     string pageShareImage = "BlueSun.png";
     string pageShareImageHeight = "300";
     string pageShareImageWidth = "300";
@@ -28,15 +23,6 @@
     {
         #region Info
         case "About":
-            {
-                description = "The Scent of Life!";
-                pageShareImage = "BlueSun.png";
-                pageShareImageHeight = "300";
-                pageShareImageWidth = "300";
-                break;
-            }
-
-        case "Home":
             {
                 description = "The Scent of Life!";
                 pageShareImage = "BlueSun.png";
@@ -709,7 +695,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="~/content/icons/favicon-16x16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="~/content/icons/favicon-32x32.png" />
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="icon" type="image/x-icon" href="~/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
     <!-- Link Share Setup -->
     <!-- This info is used for the card shown when you share a link on the web (I call it "Link Share"). -->
@@ -743,19 +729,19 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 
     <!-- My CSS files -->
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/colors.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/fontsize.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/mycards.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/sizes.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/spacing.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css?v01" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/colors.css?v01" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/fontsize.css?v01" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/mycards.css?v01" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/sizes.css?v01" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/spacing.css?v01" asp-append-version="true" />
 
     <!-- Bootstrap and JQuery files -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- My Javascript file -->
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/site.js?v01" asp-append-version="true"></script>
 
 </head>
 

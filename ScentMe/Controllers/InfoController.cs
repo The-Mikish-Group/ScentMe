@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using MyWebsite.Models;
+using ScentMe.Models;
 
-namespace MyWebsite.Controllers
+namespace ScentMe.Controllers
 {
     public class InfoController : Controller
     {
@@ -19,12 +19,13 @@ namespace MyWebsite.Controllers
             ViewBag.Message = "About";
             return View();
         }
-      
-        //public IActionResult About()
-        //{
-        //    ViewBag.Message = "About";
-        //    return View("Index");
-        //}
+
+        public IActionResult About()
+        {
+            ViewBag.Message = "About";
+            return View("Index");
+        }
+        
         public IActionResult Contact()
         {
             ViewBag.Message = "Contact";

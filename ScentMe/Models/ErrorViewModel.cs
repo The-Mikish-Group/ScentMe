@@ -1,4 +1,4 @@
-namespace MyWebsite.Models
+namespace ScentMe.Models
 {
     public class ErrorViewModel
     {

@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using MyWebsite.Models;
+using ScentMe.Models;
 
-namespace MyWebsite.Controllers
+namespace ScentMe.Controllers
 {
     public class PicturesController : Controller
     {
