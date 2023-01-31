@@ -35,9 +35,8 @@ function createImageList(imageLocation, altText, imageCount) {
 //***********************************************//
 function changeBackground(newBackground) {
     $('body').css('background-image', newBackground);
-
-
 }
+
 //***********************************************//
 //  Functions used to calculate countdown        //
 //  currently Seasons Only                       //
@@ -91,7 +90,7 @@ function updateCountdownDisplay(eventDate, eventType) {
         // Update eventDate and timezone display. Seasons needs date and time formatting (eventType === 0).
         var timezonestring = Intl.DateTimeFormat().resolvedOptions().timeZone + " " + new Date().toTimeString().slice(9);
         document.getElementById("timezone").innerHTML = timezonestring;
-        document.getElementById("eventdate").innerHTML = eventType === 0 ? eventDate.toString().substring(0, 16) : eventDate.toLocaleString();
+        document.getElementById("eventdate").innerHTML = eventType == 0 ? eventDate.toString().substring(0, 16) : eventDate.toLocaleString();
 
         const second = 1000,
             minute = second * 60,

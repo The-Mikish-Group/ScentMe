@@ -1,66 +1,72 @@
-﻿@*@code
-    Dim eventName As String = ViewData("Message")
+﻿@{
+    string eventName = ViewBag.Message;
 
-    ' Assign Svg files to floaters (Defaults to Snowflakes - Winter)
-    Dim floater1 As String = "../Content/Svg/Site/Snowflake1.svg"
-    Dim floater2 As String = "../Content/Svg/Site/Snowflake2.svg"
-    Dim floater3 As String = "../Content/Svg/Site/Snowflake3.svg"
-    Dim floater4 As String = "../Content/Svg/Site/Snowflake5.svg"
+    // Assign Svg files to floaters (Defaults to Snowflakes - Winter)
+    string floater1 = "../Content/Svg/Site/Snowflake1.svg";
+    string floater2 = "../Content/Svg/Site/Snowflake2.svg";
+    string floater3 = "../Content/Svg/Site/Snowflake3.svg";
+    string floater4 = "../Content/Svg/Site/Snowflake5.svg";
 
-    ' "sizeFactor" is used to increase or decrease overall size of floaters for each eventName
-    Dim sizeFactor As Integer = 40
-    Dim floaterCount As Integer = 8
+    // "sizeFactor" is used to increase or decrease overall size of floaters for each eventName
+    int sizeFactor = 40;
+    int floaterCount = 8;
 
-    ' Assign Svg files to floaters based on "eventName"
-    If eventName = "Christmas" Then
-        floater1 = "../Content/Svg/Site/Elf1.svg"
-        floater2 = "../Content/Svg/Site/Santa1.svg"
-        floater3 = "../Content/Svg/Site/Elf2.svg"
-        floater4 = "../Content/Svg/Site/Santa2.svg"
-        sizeFactor = 100
-        floaterCount = 6
-    End If
-    If eventName = "Autumn" Then
-        floater1 = "../Content/Svg/Site/Autumn1.svg"
-        floater2 = "../Content/Svg/Site/Autumn2.svg"
-        floater3 = "../Content/Svg/Site/Autumn3.svg"
-        floater4 = "../Content/Svg/Site/Autumn4.svg"
-        sizeFactor = 40
-        floaterCount = 12
-    End If
-    If eventName = "Halloween" Then
-        floater1 = "../Content/Svg/Site/Bat1.svg"
-        floater2 = "../Content/Svg/Site/Bat2.svg"
-        floater3 = "../Content/Svg/Site/Bat3.svg"
-        floater4 = "../Content/Svg/Site/Bat4.svg"
-        sizeFactor = 120
-        floaterCount = 12
-    End If
-    If eventName = "Valentines" Or eventName = "April" Then
-        floater1 = "../Content/Svg/Site/Heart1.svg"
-        floater2 = "../Content/Svg/Site/Heart2.svg"
-        floater3 = "../Content/Svg/Site/Heart3.svg"
-        floater4 = "../Content/Svg/Site/Heart2.svg"
-        sizeFactor = 50
-        floaterCount = 10
-    End If
-    If eventName = "Easter" Then
-        floater1 = "../Content/Svg/Site/Egg1.svg"
-        floater2 = "../Content/Svg/Site/Egg2.svg"
-        floater3 = "../Content/Svg/Site/Egg3.svg"
-        floater4 = "../Content/Svg/Site/Egg4.svg"
-        sizeFactor = 75
-        floaterCount = 8
-    End If
-    If eventName = "Thanksgiving" Then
-        floater1 = "../Content/Svg/Site/Pumpkin.svg"
-        floater2 = "../Content/Svg/Site/Turkey.svg"
-        floater3 = "../Content/Svg/Site/Pumpkin.svg"
-        floater4 = "../Content/Svg/Site/Turkey.svg"
-        sizeFactor = 60
-        floaterCount = 8
-    End If
-End Code
+    // Assign Svg files to floaters based on "eventName"
+    if (eventName == "Christmas") {
+        floater1 = "../Content/Svg/Site/Elf1.svg";
+        floater2 = "../Content/Svg/Site/Santa1.svg";
+        floater3 = "../Content/Svg/Site/Elf2.svg";
+        floater4 = "../Content/Svg/Site/Santa2.svg";
+        sizeFactor = 100;
+        floaterCount = 6; 
+    }
+
+    if (eventName == "Autumn") {
+        floater1 = "../Content/Svg/Site/Autumn1.svg";
+        floater2 = "../Content/Svg/Site/Autumn2.svg";
+        floater3 = "../Content/Svg/Site/Autumn3.svg";
+        floater4 = "../Content/Svg/Site/Autumn4.svg";
+        sizeFactor = 40;
+        floaterCount = 12;
+    }
+
+    if (eventName == "Halloween") {
+        floater1 = "../Content/Svg/Site/Bat1.svg";
+        floater2 = "../Content/Svg/Site/Bat2.svg";
+        floater3 = "../Content/Svg/Site/Bat3.svg";
+        floater4 = "../Content/Svg/Site/Bat4.svg";
+        sizeFactor = 120;
+        floaterCount = 12;
+    }
+
+    if (eventName == "Valentines") {
+        floater1 = "../Content/Svg/Site/Heart1.svg";
+        floater2 = "../Content/Svg/Site/Heart2.svg";
+        floater3 = "../Content/Svg/Site/Heart3.svg";
+        floater4 = "../Content/Svg/Site/Heart3.svg";
+        sizeFactor = 50;
+        floaterCount = 10;
+    }
+
+    if (eventName == "Easter") {
+        floater1 = "../Content/Svg/Site/Egg1.svg";
+        floater2 = "../Content/Svg/Site/Egg2.svg";
+        floater3 = "../Content/Svg/Site/Egg3.svg";
+        floater4 = "../Content/Svg/Site/Egg4.svg";
+        sizeFactor = 75;
+        floaterCount = 8;
+    }
+
+    if (eventName == "Thanksgiving") {
+        floater1 = "../Content/Svg/Site/Pumpkin.svg";
+        floater2 = "../Content/Svg/Site/Turkey.svg";
+        floater3 = "../Content/Svg/Site/Pumpkin.svg";
+        floater4 = "../Content/Svg/Site/Turkey.svg";
+        sizeFactor = 60;
+        floaterCount = 8;
+    }
+
+}
 
 <!-- Floater code adapted from "The Falling Snow Effect"
     https://www.kirupa.com/html5/the_falling_snow_effect.htm
@@ -277,4 +283,4 @@ End Code
         resetPosition = true;
     }
 
-</script>*@
+</script>

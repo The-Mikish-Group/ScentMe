@@ -7,54 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Views\Countdowns\AirForce.cshtml" />
-    <Content Remove="Views\Countdowns\Army.cshtml" />
-    <Content Remove="Views\Countdowns\Autumn.cshtml" />
-    <Content Remove="Views\Countdowns\Christmas.cshtml" />
-    <Content Remove="Views\Countdowns\Easter.cshtml" />
-    <Content Remove="Views\Countdowns\Fathers.cshtml" />
-    <Content Remove="Views\Countdowns\Halloween.cshtml" />
-    <Content Remove="Views\Countdowns\Independence.cshtml" />
-    <Content Remove="Views\Countdowns\Jefferson.cshtml" />
-    <Content Remove="Views\Countdowns\Labor.cshtml" />
-    <Content Remove="Views\Countdowns\Lincoln.cshtml" />
-    <Content Remove="Views\Countdowns\MarineCorp.cshtml" />
-    <Content Remove="Views\Countdowns\MartinLutherKing.cshtml" />
-    <Content Remove="Views\Countdowns\Memorial.cshtml" />
-    <Content Remove="Views\Countdowns\Mothers.cshtml" />
-    <Content Remove="Views\Countdowns\NationalGuard.cshtml" />
-    <Content Remove="Views\Countdowns\Navy.cshtml" />
-    <Content Remove="Views\Countdowns\NewYears.cshtml" />
-    <Content Remove="Views\Countdowns\Presidents.cshtml" />
-    <Content Remove="Views\Countdowns\Spring.cshtml" />
-    <Content Remove="Views\Countdowns\Summer.cshtml" />
-    <Content Remove="Views\Countdowns\Thanksgiving.cshtml" />
-    <Content Remove="Views\Countdowns\Valentines.cshtml" />
-    <Content Remove="Views\Countdowns\Veterans.cshtml" />
-    <Content Remove="Views\Countdowns\Washington.cshtml" />
-    <Content Remove="Views\Countdowns\Winter.cshtml" />
-    <Content Remove="Views\Info\About.cshtml" />
-    <Content Remove="Views\Info\More.cshtml" />
-    <Content Remove="Views\Pictures\Cartoons.cshtml" />
-    <Content Remove="Views\Pictures\Fishing.cshtml" />
-    <Content Remove="Views\Pictures\Jokes.cshtml" />
-    <Content Remove="Views\Pictures\Memes.cshtml" />
-    <Content Remove="Views\Pictures\ScentMe.cshtml" />
-    <Content Remove="Views\Pictures\Sunsets.cshtml" />
-    <Content Remove="Views\Pictures\Wildlife.cshtml" />
-    <Content Remove="web.config" />
-    <Content Remove="wwwroot\css\site-old.css" />
+    <Content Remove="wwwroot\Content\Pictures\Countdowns\elections.jpgx" />
+    <Content Remove="wwwroot\Content\Pictures\Countdowns\Events.jpgx" />
+    <Content Remove="wwwroot\Content\Pictures\Countdowns\Legalization.jpgx" />
     <Content Remove="wwwroot\js\site_old.js" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\Content\Pictures\Countdowns\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="web.config">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
   <ItemGroup>

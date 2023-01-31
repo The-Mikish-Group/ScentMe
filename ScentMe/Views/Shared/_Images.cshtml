@@ -22,7 +22,7 @@
 
         <div class="col-4" id="my-button">
             <button title="Copy Link to Clipboard" tooltip="Copy this Link" onclick="copyLink()" onmouseout="copyLinkOut()">
-                <img style="width:26px; height:26px;" src="/Content/Svg/Site/Links.svg"> Links
+                <img style="width:26px; height:26px;" src="/Content/Svg/Site/Links.svg"> Copy Link
             </button>
         </div>        
 
@@ -76,6 +76,7 @@
         navigator.clipboard.writeText(textToCopy)
         .then(() => { alert(textToCopy + ` Copied!`) })
         .catch((error) => { alert(`Copy failed! ${error}`) })
+
     }
 
     //function copyLink() {

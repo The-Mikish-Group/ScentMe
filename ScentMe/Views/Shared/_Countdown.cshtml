@@ -2,10 +2,6 @@
     string eventName = ViewBag.Message;
     string backgroundImageUrl = "/Content/Pictures/Countdowns/" + eventName + ".jpg";
 
-    string eventDateString = Holidays.GetEventUtcDateString(eventName, DateTime.Now.Year);
-
-    if (DateTime.Parse(eventDateString) < DateTime.UtcNow) {eventDateString = Holidays.GetEventUtcDateString(eventName, DateTime.Now.Year + 1); }
-    
     //Cosmetic Fix for Names and add eventType and ExtraEffects where needed.
     string ExtraEffects = "_Nothing";
     int eventType = 0;
@@ -173,6 +169,15 @@
             }
 
     }
+
+    // Get the Event DataString from the Holidays Class
+    string eventDateString = Holidays.GetEventUtcDateString(ViewBag.Message, DateTime.Now.Year);    
+    if (DateTime.Parse(eventDateString) < DateTime.UtcNow)
+    { 
+        // Add a year if past event date and try again
+        eventDateString = Holidays.GetEventUtcDateString(ViewBag.Message, DateTime.Now.Year + 1); 
+    }
+
 }
 
 <partial name="@ExtraEffects" />
@@ -191,7 +196,7 @@
             <h6 id="eventdate"></h6>
 
             <!-- Days -->
-            <h2 id="days"></h2>
+            <p id="days"></p>
             <h6 id="lbldays"></h6>
 
             <!-- Hours, Minutes, and Seconds -->
@@ -219,7 +224,6 @@
 </div>
 
 <script>
-
     var eventType = ('@eventType');
     var eventName = ('@eventName');
     var eventDate = new Date(Date.parse('@eventDateString'));
@@ -231,7 +235,4 @@
     };
 
     eventCountdown(eventName, eventType, eventDate);
-
-    // The End
-
 </script>
