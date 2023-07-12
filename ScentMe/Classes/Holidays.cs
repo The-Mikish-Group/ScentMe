@@ -90,23 +90,23 @@ namespace ScentMe.Classes
                         //Memorial Day is usually the 4 Monday of the Month,
                         //but sometimes it is the 5th Monday. The Replace() catches
                         //those times and returns the correct date.
-                        return CalculateDateString(5, 4, 2).Replace("05-24", "05-31");
+                        return CalculateDateString(5, 4, 1).Replace("05-24", "05-31");
                     }
                 case "Labor":
                     {
-                        return CalculateDateString(9, 1, 2);
+                        return CalculateDateString(9, 1, 1);
                     }
                 case "Thanksgiving":
                     {
-                        return CalculateDateString(11, 4, 5);
+                        return CalculateDateString(11, 4, 4);
                     }
                 case "MartinLutherKing":
                     {
-                        return CalculateDateString(1, 3, 2);
+                        return CalculateDateString(1, 3, 1);
                     }
                 case "Presidents":
                     {
-                        return CalculateDateString(2, 3, 2);
+                        return CalculateDateString(2, 3, 1);
                     }
                 case "Easter":
                     {
